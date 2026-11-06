@@ -7,409 +7,401 @@
 <meta name="description" content="PCS Cleaning & Property Services Ltd. Full service commercial janitorial, plus landscaping, snow removal and building maintenance. Call (403) 764-9133.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#55b63f; --green-d:#3f9a2c; --lime:#8fd16f;
-  --navy:#0b0f5c; --ink:#070a3a; --blue:#1b4b8a; --sky:#c6e6f2; --paper:#f4f7f2;
-  --line:rgba(11,15,92,.14);
+  --lime:#7ed957; --green:#55b63f; --navy:#0b0f5c; --night:#05072b; --deep:#0a0e45;
+  --sky:#c6e6f2; --blue:#2c6fd1; --white:#fff; --mist:#eef3f7;
+  --r:28px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:"Public Sans",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:"Manrope",system-ui,sans-serif;background:var(--night);color:#fff;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
-.wrap{width:min(1240px,92vw);margin-inline:auto}
-.disp{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:800;letter-spacing:-.02em;line-height:.95}
-.cond{font-family:"Archivo",sans-serif;font-stretch:75%;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.wrap{width:min(1320px,93vw);margin-inline:auto}
+.u{font-family:"Unbounded",sans-serif;letter-spacing:-.02em;line-height:1.02}
+.eyebrow{display:inline-flex;align-items:center;gap:.55rem;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.16em}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px rgba(126,217,87,.18)}
+.pill{display:inline-flex;align-items:center;gap:.7rem;border-radius:999px;padding:.95rem 1.5rem;font-weight:700;font-size:.95rem;transition:transform .25s,background .25s,color .25s}
+.pill-lime{background:var(--lime);color:var(--night)}
+.pill-lime:hover{background:#fff;transform:translateY(-2px)}
+.pill-ghost{border:1px solid rgba(255,255,255,.28);color:#fff;backdrop-filter:blur(10px);background:rgba(255,255,255,.06)}
+.pill-ghost:hover{background:#fff;color:var(--night)}
+.pill .dot{width:28px;height:28px;border-radius:50%;background:var(--night);color:var(--lime);display:grid;place-items:center;font-size:.85rem;margin-right:-.7rem}
 
-/* utility bar */
-.util{background:var(--ink);color:#dfe6ff;font-size:.82rem}
-.util .wrap{display:flex;justify-content:space-between;align-items:center;padding:.55rem 0;gap:1rem}
-.util b{color:var(--lime);font-weight:600}
-.util a:hover{color:#fff}
-
-/* header */
-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:86px}
-.brand{display:flex;align-items:center;gap:.9rem}
-.brand img{height:62px;width:auto}
-.brand span{font-family:"Archivo",sans-serif;font-stretch:75%;font-weight:700;font-size:.95rem;line-height:1.15;text-transform:uppercase;letter-spacing:.06em;color:var(--navy);max-width:170px}
-nav ul{list-style:none;display:flex;gap:1.6rem;align-items:center}
-nav a{font-weight:500;font-size:.93rem;position:relative;padding:.3rem 0}
-nav a:not(.qbtn)::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--green);transition:width .25s}
-nav a:not(.qbtn):hover::after,nav a.on::after{width:100%}
-.qbtn{background:var(--green);color:#fff;padding:.7rem 1.15rem!important;font-weight:600;clip-path:polygon(0 0,100% 0,92% 100%,0 100%);transition:background .2s}
-.qbtn:hover{background:var(--navy)}
-.burger{display:none;background:none;border:0;width:42px;height:42px;cursor:pointer}
-.burger i{display:block;height:2px;background:var(--navy);margin:7px 8px}
+/* NAV (floating glass) */
+.nav{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:60;width:min(1320px,93vw);display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem .6rem .55rem .7rem;border-radius:999px;background:rgba(8,11,58,.55);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(255,255,255,.12);transition:background .3s}
+.nav.solid{background:rgba(5,7,43,.92)}
+.logo-chip{background:#fff;border-radius:999px;padding:.35rem 1rem;display:flex;align-items:center}
+.logo-chip img{height:40px;width:auto}
+.nav ul{list-style:none;display:flex;gap:.3rem}
+.nav ul a{display:block;padding:.6rem .95rem;border-radius:999px;font-size:.9rem;font-weight:600;color:#d8dcff;transition:background .2s,color .2s}
+.nav ul a:hover,.nav ul a.on{background:rgba(255,255,255,.1);color:#fff}
+.nav-r{display:flex;gap:.5rem;align-items:center}
+.nav-r .tel{font-weight:700;font-size:.9rem;padding:.6rem 1rem;color:var(--lime)}
+.nav-r .pill{padding:.7rem 1.2rem}
+.burger{display:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--lime);cursor:pointer}
+.burger i{display:block;width:18px;height:2px;background:var(--night);margin:4px auto}
 
 /* HERO */
-.hero{background:#fff;position:relative;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.02fr 1fr;gap:3rem;align-items:end;padding:4.5rem 0 0}
-.hero-copy{padding-bottom:4.5rem}
-.tag{display:inline-flex;align-items:center;gap:.6rem;color:var(--green-d);font-size:.8rem}
-.tag::before{content:"";width:34px;height:2px;background:var(--green)}
-.hero h1{font-size:clamp(2.6rem,5.4vw,4.9rem);color:var(--navy);margin:1.2rem 0 1.5rem}
-.hero h1 em{font-style:normal;color:var(--green);display:block}
-.hero p.lead{font-size:1.08rem;max-width:30rem;color:#33375f}
-.hero-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1rem 1.5rem;font-weight:600;font-size:.95rem;transition:transform .2s,background .2s}
-.btn-g{background:var(--green);color:#fff}
-.btn-g:hover{background:var(--green-d);transform:translateY(-2px)}
-.btn-line{border:1.5px solid var(--navy);color:var(--navy)}
-.btn-line:hover{background:var(--navy);color:#fff}
-.hero-meta{display:flex;gap:2.4rem;margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line)}
-.hero-meta div{font-size:.85rem;color:#4b4f78}
-.hero-meta strong{display:block;font-family:"Archivo",sans-serif;font-stretch:125%;font-size:1.6rem;color:var(--navy);font-weight:800}
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;padding:9rem 0 2.5rem}
+.hero-bg{position:absolute;inset:0;background:url(images/cleaning.jpg) center 30%/cover no-repeat;transform:scale(1.08);animation:zoom 14s ease-out forwards}
+@keyframes zoom{to{transform:scale(1)}}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;background:
+  linear-gradient(180deg,rgba(5,7,43,.55) 0%,rgba(5,7,43,.2) 35%,rgba(5,7,43,.92) 82%,var(--night) 100%),
+  radial-gradient(70% 60% at 10% 90%,rgba(85,182,63,.35),transparent 60%)}
+.hero .wrap{position:relative;z-index:2}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;flex-wrap:wrap}
+.hero h1{font-size:clamp(2.7rem,7.4vw,7.2rem);font-weight:700;max-width:13ch;margin-top:1.4rem}
+.hero h1 .hl{color:var(--lime)}
+.hero h1 .ol{color:transparent;-webkit-text-stroke:1.5px #fff}
+.hero-side{max-width:360px;padding-bottom:.6rem}
+.hero-side p{color:#d4d8f5;font-size:1.05rem;margin-bottom:1.6rem}
+.hero-side .btns{display:flex;flex-wrap:wrap;gap:.7rem}
+.hero-chips{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3.2rem}
+.chip{border-radius:22px;padding:1.2rem 1.4rem;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;align-items:center;gap:1rem;opacity:0;transform:translateY(20px);animation:up .8s forwards}
+.chip:nth-child(1){animation-delay:.4s}.chip:nth-child(2){animation-delay:.55s}.chip:nth-child(3){animation-delay:.7s}
+@keyframes up{to{opacity:1;transform:none}}
+.chip b{font-family:"Unbounded";font-size:1.5rem;font-weight:700;color:var(--lime);line-height:1}
+.chip span{font-size:.88rem;color:#d4d8f5;line-height:1.35}
+.chip .ico{width:44px;height:44px;border-radius:14px;background:var(--lime);color:var(--night);display:grid;place-items:center;flex-shrink:0}
 
-/* skyline photo made of bars (from the logo's building bars) */
-.skyline{position:relative;height:600px;container-type:size;display:flex;gap:6px;align-items:flex-end}
-.bar{flex:1;height:100%;background-image:url(images/cleaning.jpg);background-repeat:no-repeat;
-  background-size:calc(100cqw + 0px) 100cqh;background-position:calc(var(--i) * -1 * (100cqw + 6px) / 9) 0;
-  clip-path:inset(100% 0 0 0);animation:rise 1.2s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:calc(var(--i) * 90ms + .15s);position:relative}
-.bar::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(85,182,63,.0) 0,rgba(11,15,92,.0) 60%,rgba(11,15,92,.35));}
-@keyframes rise{to{clip-path:inset(var(--t) 0 0 0)}}
-.bar:nth-child(even)::before{content:"";position:absolute;left:0;right:0;top:var(--t);height:10px;background:var(--green);z-index:2;opacity:0;animation:fade .4s forwards;animation-delay:calc(var(--i) * 90ms + 1.1s)}
-.bar:nth-child(odd)::before{content:"";position:absolute;left:0;right:0;top:var(--t);height:10px;background:var(--sky);z-index:2;opacity:0;animation:fade .4s forwards;animation-delay:calc(var(--i) * 90ms + 1.1s)}
-@keyframes fade{to{opacity:1}}
-.sky-label{position:absolute;left:-1.5rem;bottom:2.2rem;background:var(--navy);color:#fff;padding:1rem 1.3rem;z-index:3;max-width:250px;font-size:.85rem;line-height:1.4}
-.sky-label b{display:block;font-family:"Archivo",sans-serif;font-stretch:75%;text-transform:uppercase;letter-spacing:.1em;color:var(--lime);font-size:.75rem;margin-bottom:.25rem}
+/* TICKER */
+.ticker{background:var(--lime);color:var(--night);overflow:hidden;padding:1.05rem 0;transform:rotate(-1.4deg);margin:0 -2vw;width:104vw}
+.ticker .t{display:flex;width:max-content;animation:tick 32s linear infinite}
+.ticker span{font-family:"Unbounded";font-weight:600;font-size:clamp(1rem,1.8vw,1.4rem);white-space:nowrap;display:flex;align-items:center;gap:2rem;padding-right:2rem;text-transform:uppercase}
+.ticker span::after{content:"✦";font-size:1rem}
+@keyframes tick{to{transform:translateX(-50%)}}
 
-/* NAME STORY */
-.name{background:var(--navy);color:#fff;padding:6rem 0 5.5rem;position:relative;overflow:hidden}
-.name .kicker{color:var(--lime)}
-.word-row{display:flex;flex-wrap:wrap;gap:0 2.2vw;margin:1.6rem 0 2.6rem}
-.word{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:800;font-size:clamp(2.6rem,8.4vw,7.6rem);line-height:1;letter-spacing:-.03em;color:rgba(255,255,255,.14);transition:color .6s}
-.word span{color:var(--green)}
-.name.in .word{color:rgba(255,255,255,.14)}
-.name-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
-.name-grid p{font-size:1.1rem;color:#cfd6ff;max-width:34rem}
-.name-grid .big{font-family:"Archivo",sans-serif;font-stretch:110%;font-weight:700;font-size:1.6rem;line-height:1.3;color:#fff}
-.name-grid .big mark{background:none;color:var(--lime)}
+/* BENTO */
+.bento-sec{padding:7rem 0 6rem}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:2.6rem;flex-wrap:wrap}
+.head h2{font-size:clamp(2rem,4.4vw,3.8rem);font-weight:700;max-width:15ch;margin-top:1rem}
+.head h2 span{color:var(--lime)}
+.head p{max-width:27rem;color:#b9bfe8}
+.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(120px,auto);gap:1rem}
+.tile{border-radius:var(--r);overflow:hidden;position:relative;background:var(--deep);border:1px solid rgba(255,255,255,.08)}
+.tile .img{position:absolute;inset:0;background:linear-gradient(135deg,#132079,#0a0e45)}
+.tile .img img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.8,.2,1)}
+.tile:hover .img img{transform:scale(1.06)}
+.tile .shade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(5,7,43,.92))}
+.tile .in{position:relative;z-index:2;height:100%;padding:2rem;display:flex;flex-direction:column}
+.badge{align-self:flex-start;border-radius:999px;padding:.4rem .85rem;font-size:.75rem;font-weight:700;letter-spacing:.06em;background:rgba(255,255,255,.14);backdrop-filter:blur(10px)}
+.t-clean{grid-column:span 7;grid-row:span 4;min-height:520px}
+.t-clean .in{justify-content:space-between}
+.t-clean h3{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700}
+.t-clean p{color:#d4d8f5;max-width:30rem;margin-top:.8rem}
+.yr{font-family:"Unbounded";font-weight:800;font-size:clamp(4rem,8vw,7rem);line-height:.8;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.55)}
+.arrow{width:54px;height:54px;border-radius:50%;background:var(--lime);color:var(--night);display:grid;place-items:center;font-size:1.3rem;font-weight:700;transition:transform .3s}
+.tile:hover .arrow{transform:rotate(-45deg)}
+.row-end{display:flex;justify-content:space-between;align-items:flex-end;gap:1rem;margin-top:1.4rem}
+.t-prop{grid-column:span 5;grid-row:span 2;background:var(--sky);color:var(--night);border:0}
+.t-prop .in{justify-content:space-between}
+.t-prop h3{font-size:clamp(1.4rem,2.2vw,1.9rem);font-weight:700}
+.t-prop p{color:#22306e;margin-top:.5rem;font-size:.95rem}
+.t-prop .yr{-webkit-text-stroke:1.5px var(--navy);font-size:clamp(3rem,5vw,4.6rem)}
+.t-prop .badge{background:var(--navy);color:#fff}
+.t-small{grid-column:span 5;grid-row:span 2;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;background:none;border:0}
+.mini{border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(160deg,#18288a,#0a0e45);min-height:240px}
+.mini img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.mini:hover img{transform:scale(1.07)}
+.mini::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(5,7,43,.9))}
+.mini span{position:absolute;left:.9rem;right:.9rem;bottom:.9rem;z-index:2;font-weight:700;font-size:.9rem;line-height:1.25}
+.t-story{grid-column:span 8;grid-row:span 2;background:var(--navy);border:0}
+.t-story .in{display:grid;grid-template-columns:auto 1fr;gap:2.4rem;align-items:center}
+.acr{display:flex;flex-direction:column;gap:.15rem}
+.acr div{font-family:"Unbounded";font-weight:700;font-size:clamp(1.3rem,2.4vw,2rem);line-height:1.1;color:rgba(255,255,255,.35)}
+.acr b{color:var(--lime);font-weight:800}
+.t-story p{color:#d4d8f5;font-size:1.05rem}
+.t-story p strong{color:#fff}
+.t-call{grid-column:span 4;grid-row:span 2;background:var(--lime);color:var(--night);border:0}
+.t-call .in{justify-content:space-between}
+.t-call .big{font-family:"Unbounded";font-weight:700;font-size:clamp(1.5rem,2.4vw,2.1rem);line-height:1.1}
+.t-call small{font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;opacity:.7}
+.t-call .arrow{background:var(--night);color:var(--lime)}
 
-/* DIVISIONS */
-.divs{padding:6.5rem 0;background:var(--paper)}
-.sec-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:3rem}
-.sec-head h2{font-size:clamp(2rem,4vw,3.4rem);color:var(--navy);max-width:16ch}
-.sec-head p{max-width:26rem;color:#454a73}
-.diptych{display:grid;grid-template-columns:1fr 1fr;min-height:640px;background:#fff;box-shadow:0 30px 60px -40px rgba(11,15,92,.4)}
-.div-card{position:relative;padding:3rem;display:flex;flex-direction:column;overflow:hidden}
-.div-card .yr{font-family:"Archivo",sans-serif;font-stretch:125%;font-weight:900;font-size:clamp(5rem,10vw,9rem);line-height:.8;letter-spacing:-.05em}
-.div-card h3{font-family:"Archivo",sans-serif;font-stretch:110%;font-weight:800;font-size:2rem;margin:1.3rem 0 .8rem;line-height:1.05}
-.div-card p{max-width:30rem}
-.div-card .go{margin-top:auto;padding-top:2rem;display:inline-flex;gap:.6rem;align-items:center;font-weight:600}
-.div-card .go::after{content:"→";transition:transform .2s}
-.div-card .go:hover::after{transform:translateX(5px)}
-.dc-clean{background:var(--navy);color:#fff}
-.dc-clean .yr{color:var(--green)}
-.dc-clean p{color:#cfd6ff}
-.dc-prop{background:#fff;color:var(--navy)}
-.dc-prop .yr{color:var(--blue)}
-.dc-prop p{color:#454a73}
-.div-img{margin:2rem -3rem 0;height:230px;background:linear-gradient(135deg,#1b2a8a,#0b0f5c);overflow:hidden}
-.dc-prop .div-img{background:linear-gradient(135deg,#dff0d6,#c6e6f2)}
-.div-img img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.div-card:hover .div-img img{transform:scale(1.05)}
-.prop-trio{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-top:1.6rem}
-.prop-trio figure{position:relative;aspect-ratio:3/4;background:linear-gradient(160deg,#e3f2dc,#c6e6f2);overflow:hidden;clip-path:polygon(0 0,100% 0,100% 88%,82% 100%,0 100%)}
-.prop-trio img{width:100%;height:100%;object-fit:cover}
-.prop-trio figcaption{position:absolute;left:0;bottom:0;right:0;padding:.6rem .7rem;background:linear-gradient(transparent,rgba(7,10,58,.85));color:#fff;font-family:"Archivo",sans-serif;font-stretch:75%;font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:.75rem}
+/* INDUSTRIES RAIL */
+.rail-sec{padding:6rem 0;background:var(--mist);color:var(--night);border-radius:48px 48px 0 0}
+.rail-sec .head p{color:#3d4677}
+.rail-sec .head h2 span{color:var(--green)}
+.rail-ctrl{display:flex;gap:.6rem}
+.rail-ctrl button{width:56px;height:56px;border-radius:50%;border:1.5px solid var(--night);background:none;font-size:1.2rem;cursor:pointer;transition:all .2s;color:var(--night)}
+.rail-ctrl button:hover{background:var(--night);color:var(--lime)}
+.rail{display:flex;gap:1.2rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 0 1rem;scroll-padding-left:3.5vw;scrollbar-width:none;cursor:grab}
+.rail::-webkit-scrollbar{display:none}
+.ind:first-child{margin-left:3.5vw}.ind:last-child{margin-right:3.5vw}
+.ind{flex:0 0 clamp(270px,27vw,370px);aspect-ratio:3/4;border-radius:var(--r);overflow:hidden;position:relative;scroll-snap-align:start;background:linear-gradient(160deg,#1b4b8a,#0b0f5c)}
+.ind img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.ind:hover img{transform:scale(1.06)}
+.ind::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(5,7,43,.1),rgba(5,7,43,.85))}
+.ind .num{position:absolute;top:1.2rem;left:1.2rem;z-index:2;font-family:"Unbounded";font-weight:700;font-size:.8rem;background:#fff;color:var(--night);border-radius:999px;padding:.4rem .75rem}
+.ind h3{position:absolute;left:1.5rem;right:1.5rem;bottom:1.5rem;z-index:2;color:#fff;font-family:"Unbounded";font-weight:700;font-size:1.55rem;line-height:1.1}
+.ind.more{background:var(--lime);display:flex;align-items:flex-end;padding:1.5rem}
+.ind.more::after{display:none}
+.ind.more h3{position:static;color:var(--night)}
 
-/* WHO WE SERVE - index */
-.serve{padding:6rem 0;background:#fff}
-.serve-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:4rem}
-.serve-left h2{font-size:clamp(2rem,3.6vw,3.1rem);color:var(--navy)}
-.serve-left p{margin-top:1.2rem;color:#454a73;max-width:24rem}
-.serve-preview{margin-top:2.2rem;aspect-ratio:16/9;background:linear-gradient(135deg,#0b0f5c,#1b4b8a);overflow:hidden;position:relative}
-.serve-preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .45s}
-.serve-preview img.show{opacity:1}
-.index{list-style:none;border-top:1.5px solid var(--navy)}
-.index li{border-bottom:1px solid var(--line)}
-.index a{display:grid;grid-template-columns:70px 1fr 40px;align-items:center;padding:1.45rem .4rem;transition:background .25s,padding .25s}
-.index .n{font-family:"Archivo",sans-serif;font-stretch:75%;font-weight:700;color:var(--green-d);letter-spacing:.08em}
-.index .t{font-family:"Archivo",sans-serif;font-stretch:115%;font-weight:700;font-size:clamp(1.4rem,2.6vw,2.2rem);color:var(--navy);letter-spacing:-.01em}
-.index .ar{width:40px;height:40px;border:1.5px solid var(--line);display:grid;place-items:center;transition:all .25s;color:var(--navy)}
-.index li.act a{background:var(--paper);padding-left:1.2rem}
-.index li.act .ar{background:var(--green);border-color:var(--green);color:#fff}
-.index-more{margin-top:1.4rem;color:#454a73;font-size:.95rem}
+/* TESTIMONIAL SLIDER */
+.voices{background:var(--mist);color:var(--night);padding:2rem 0 7rem}
+.v-card{background:var(--night);color:#fff;border-radius:40px;padding:clamp(2.2rem,5vw,4.5rem);display:grid;grid-template-columns:1fr 280px;gap:3rem;position:relative;overflow:hidden}
+.v-card::before{content:"";position:absolute;width:520px;height:520px;right:-160px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(126,217,87,.35),transparent 65%)}
+.slides{position:relative;min-height:260px}
+.slide{position:absolute;inset:0;opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s;pointer-events:none}
+.slide.on{opacity:1;transform:none;pointer-events:auto}
+.slide q{display:block;font-family:"Unbounded";font-weight:600;font-size:clamp(1.4rem,3vw,2.6rem);line-height:1.2;quotes:none}
+.slide .who{margin-top:1.8rem;display:flex;align-items:center;gap:.9rem;color:#c7cdf3}
+.slide .who b{color:var(--lime);font-weight:700}
+.slide .av{width:46px;height:46px;border-radius:50%;background:var(--lime);color:var(--night);display:grid;place-items:center;font-family:"Unbounded";font-weight:700}
+.v-side{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:2rem}
+.qmark{font-family:"Unbounded";font-weight:800;font-size:9rem;line-height:.7;color:var(--lime)}
+.dots{display:flex;flex-direction:column;gap:.5rem}
+.dots button{text-align:left;background:none;border:0;border-top:1px solid rgba(255,255,255,.15);color:#8e96cf;padding:.75rem 0;font:600 .9rem "Manrope";cursor:pointer;display:flex;justify-content:space-between;transition:color .2s}
+.dots button.on{color:#fff}
+.dots button.on::after{content:"●";color:var(--lime)}
 
-/* TESTIMONIALS */
-.words{padding:6.5rem 0;background:var(--sky);position:relative;overflow:hidden}
-.words h2{font-size:clamp(2rem,4vw,3.3rem);color:var(--navy);max-width:14ch}
-.quotes{display:grid;grid-template-columns:repeat(12,1fr);gap:1.4rem;margin-top:3rem}
-.q{background:#fff;padding:2.2rem 2rem 1.8rem;position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:250px}
-.q::before{content:"\201C";font-family:"Archivo",sans-serif;font-weight:900;font-size:5rem;line-height:.6;color:var(--green);display:block;height:2.2rem}
-.q blockquote{font-family:"Archivo",sans-serif;font-stretch:100%;font-weight:600;font-size:1.25rem;line-height:1.35;color:var(--navy)}
-.q cite{font-style:normal;margin-top:1.5rem;font-size:.9rem;color:#454a73;border-top:1px solid var(--line);padding-top:.9rem}
-.q cite b{color:var(--navy)}
-.q1{grid-column:1/8}
-.q2{grid-column:8/13;background:var(--navy)}
-.q2 blockquote{color:#fff}.q2 cite{color:#cfd6ff;border-color:rgba(255,255,255,.15)}.q2 cite b{color:var(--lime)}
-.q3{grid-column:1/6;background:var(--green)}
-.q3::before{color:var(--navy)}.q3 blockquote{color:#fff}.q3 cite{color:#eaffdf;border-color:rgba(255,255,255,.3)}.q3 cite b{color:#fff}
-.q4{grid-column:6/13}
+/* CLIENT WALL */
+.wall-sec{padding:7rem 0 6rem}
+.wall{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:.5rem}
+.wall span{border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:.8rem 1.3rem;font-weight:600;font-size:clamp(.88rem,1.2vw,1.02rem);color:#dfe3ff;transition:all .25s;opacity:0;transform:translateY(10px)}
+.wall.in span{opacity:1;transform:none}
+.wall span:hover{background:var(--lime);border-color:var(--lime);color:var(--night)}
+.wall span.hot{background:rgba(126,217,87,.12);border-color:rgba(126,217,87,.4)}
 
-/* CLIENT ROSTER */
-.roster{background:var(--ink);color:#fff;padding:5.5rem 0 4.5rem;overflow:hidden}
-.roster .head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:2.8rem}
-.roster h2{font-size:clamp(1.8rem,3.4vw,2.8rem);max-width:18ch}
-.roster .head p{color:#b9c1f5;max-width:26rem}
-.marq{display:flex;overflow:hidden;border-top:1px solid rgba(255,255,255,.1);padding:1.1rem 0;-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.marq:last-of-type{border-bottom:1px solid rgba(255,255,255,.1)}
-.track{display:flex;flex-shrink:0;gap:2.6rem;padding-right:2.6rem;animation:slide 60s linear infinite}
-.marq.rev .track{animation-direction:reverse;animation-duration:70s}
-.track span{font-family:"Archivo",sans-serif;font-stretch:110%;font-weight:700;font-size:clamp(1.2rem,2.2vw,1.9rem);white-space:nowrap;color:#e9edff;display:flex;align-items:center;gap:2.6rem}
-.track span::after{content:"";width:10px;height:10px;background:var(--green);transform:rotate(45deg)}
-.marq.rev .track span{color:transparent;-webkit-text-stroke:1px #9aa6f0}
-.marq.rev .track span::after{background:var(--sky)}
-.marq:hover .track{animation-play-state:paused}
-@keyframes slide{to{transform:translateX(-100%)}}
-
-/* QUOTE CTA */
-.cta{background:#fff;padding:6rem 0}
-.cta-box{display:grid;grid-template-columns:1.25fr 1fr;background:var(--green);color:#fff;position:relative;overflow:hidden}
-.cta-l{padding:4rem 3.5rem;position:relative;z-index:2}
-.cta-l h2{font-size:clamp(2.2rem,4.6vw,4rem)}
-.cta-l p{margin:1.2rem 0 2rem;font-size:1.08rem;max-width:28rem;color:#f2ffec}
-.cta-l .btn-w{background:#fff;color:var(--navy)}
-.cta-l .btn-w:hover{background:var(--navy);color:#fff}
-.cta-r{background:var(--navy);padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center;gap:2rem;clip-path:polygon(14% 0,100% 0,100% 100%,0 100%);padding-left:5.5rem}
-.cta-r .lbl{color:var(--lime);font-size:.75rem}
-.cta-r .val{font-family:"Archivo",sans-serif;font-stretch:115%;font-weight:800;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.1;margin-top:.3rem}
-.cta-r a.val:hover{color:var(--lime)}
-.cta-bars{position:absolute;right:42%;bottom:0;display:flex;gap:5px;align-items:flex-end;opacity:.22;z-index:1}
-.cta-bars i{width:22px;background:#fff}
+/* CTA */
+.cta{padding:2rem 0 7rem}
+.cta-box{border-radius:48px;background:linear-gradient(120deg,var(--green),var(--lime));color:var(--night);padding:clamp(2.4rem,6vw,5.5rem);display:grid;grid-template-columns:1fr auto;gap:3rem;align-items:center;position:relative;overflow:hidden}
+.cta-box::after{content:"PCS";position:absolute;right:-2rem;bottom:-4.5rem;font-family:"Unbounded";font-weight:800;font-size:clamp(9rem,22vw,20rem);color:rgba(5,7,43,.08);line-height:1;pointer-events:none}
+.cta-box h2{font-size:clamp(2.4rem,6vw,5.4rem);font-weight:700;position:relative;z-index:1}
+.cta-box p{font-size:1.1rem;max-width:30rem;margin-top:1.2rem;color:#14320a;font-weight:500;position:relative;z-index:1}
+.cta-meta{display:flex;gap:2.2rem;flex-wrap:wrap;margin-top:2rem;position:relative;z-index:1}
+.cta-meta small{display:block;font-weight:700;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;opacity:.65}
+.cta-meta a,.cta-meta div{font-family:"Unbounded";font-weight:600;font-size:1.15rem}
+.spin{position:relative;width:210px;height:210px;display:grid;place-items:center;z-index:1}
+.spin svg{position:absolute;inset:0;animation:rot 16s linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+.spin .core{width:112px;height:112px;border-radius:50%;background:var(--night);color:var(--lime);display:grid;place-items:center;font-size:2rem;transition:transform .3s}
+.spin:hover .core{transform:scale(1.08) rotate(-45deg)}
 
 /* FOOTER */
-footer{background:var(--ink);color:#c6cdf5;padding:4.5rem 0 1.6rem;font-size:.93rem}
-.f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
-.f-logo{background:#fff;display:inline-block;padding:.7rem 1rem}
-.f-logo img{height:64px;width:auto}
-.f-grid h4{font-family:"Archivo",sans-serif;font-stretch:75%;text-transform:uppercase;letter-spacing:.12em;color:var(--lime);font-size:.8rem;margin-bottom:1.1rem}
+footer{border-top:1px solid rgba(255,255,255,.08);padding:4.5rem 0 1.5rem;overflow:hidden}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3rem}
+.f-grid h4{font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:1rem}
 .f-grid ul{list-style:none;display:grid;gap:.55rem}
+.f-grid a{color:#c7cdf3}
 .f-grid a:hover{color:#fff}
-.f-about{margin-top:1.2rem;max-width:22rem}
-.f-big{font-family:"Archivo",sans-serif;font-stretch:115%;font-weight:800;font-size:1.5rem;color:#fff;display:block;margin-bottom:.5rem}
-.f-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.5rem;font-size:.85rem}
+.f-grid p{color:#a9b0e0;max-width:22rem;margin-top:1.2rem}
+.f-logo{display:inline-flex;background:#fff;border-radius:20px;padding:.6rem 1.1rem}
+.f-logo img{height:58px;width:auto}
+.f-tel{font-family:"Unbounded";font-weight:600;font-size:1.35rem;color:#fff!important}
+.f-word{font-family:"Unbounded";font-weight:800;font-size:clamp(4rem,15vw,15rem);line-height:.85;letter-spacing:-.04em;margin:4rem 0 1.5rem;background:linear-gradient(180deg,rgba(255,255,255,.14),rgba(255,255,255,0));-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap}
+.f-bot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.85rem;color:#8e96cf;border-top:1px solid rgba(255,255,255,.08);padding-top:1.4rem}
 .f-bot a{color:var(--lime)}
 .f-bot a:hover{color:#fff}
-.top{color:#fff}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .8s,transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
 
-/* responsive */
-@media(max-width:1060px){
-  nav ul{display:none;position:absolute;top:86px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:1.2rem 4vw 1.6rem;gap:1rem;border-bottom:1px solid var(--line)}
-  nav ul.open{display:flex}
+@media(max-width:1100px){
+  .nav ul{display:none;position:absolute;top:calc(100% + 10px);left:0;right:0;flex-direction:column;background:rgba(5,7,43,.97);border-radius:24px;padding:1rem;border:1px solid rgba(255,255,255,.1)}
+  .nav ul.open{display:flex}
   .burger{display:block}
+  .nav-r .tel{display:none}
 }
 @media(max-width:900px){
-  .hero .wrap{grid-template-columns:1fr;gap:0;padding-top:3rem}
-  .hero-copy{padding-bottom:2.5rem}
-  .skyline{height:380px}
-  .sky-label{left:0}
-  .name-grid,.serve-grid{grid-template-columns:1fr;gap:2rem}
-  .sec-head,.roster .head{flex-direction:column;align-items:flex-start}
-  .diptych{grid-template-columns:1fr}
-  .div-card{padding:2.4rem 1.6rem}.div-img{margin:2rem -1.6rem 0}
-  .q1,.q2,.q3,.q4{grid-column:1/-1}
+  .hero-chips{grid-template-columns:1fr}
+  .bento>*{grid-column:1/-1!important}
+  .t-clean{min-height:460px}
+  .t-small{grid-template-columns:repeat(3,1fr)}
+  .mini{min-height:190px}
+  .t-story .in{grid-template-columns:1fr;gap:1.4rem}
+  .v-card{grid-template-columns:1fr}
+  .slides{min-height:300px}
+  .qmark{display:none}
+  .dots{flex-direction:row;flex-wrap:wrap}
+  .dots button{flex:1 1 45%}
   .cta-box{grid-template-columns:1fr}
-  .cta-l{padding:3rem 1.8rem}
-  .cta-r{clip-path:none;padding:2.6rem 1.8rem}
-  .cta-bars{display:none}
+  .spin{width:170px;height:170px}
   .f-grid{grid-template-columns:1fr}
+  .rail-sec{border-radius:32px 32px 0 0}
 }
 @media(max-width:560px){
-  .util .hrs{display:none}
-  .brand span{display:none}
-  .hero-meta{gap:1.4rem;flex-wrap:wrap}
-  .index a{grid-template-columns:44px 1fr 36px}
-  .serve-preview{display:none}
-  .prop-trio{grid-template-columns:1fr 1fr 1fr;gap:.5rem}
-  .prop-trio figcaption{font-size:.58rem;letter-spacing:.04em;padding:.5rem .45rem}
+  .nav-r .pill{display:none}
+  .logo-chip img{height:34px}
+  .hero{padding-top:7.5rem}
+  .mini span{font-size:.72rem;left:.6rem;right:.6rem}
+  .t-small{gap:.5rem}
+  .tile .in{padding:1.5rem}
 }
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.bar{clip-path:inset(var(--t) 0 0 0)}.bar::before{opacity:1!important}.rv{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.chip,.wall span{opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
 
-<div class="util">
-  <div class="wrap">
-    <span class="hrs">Monday to Friday <b>8 AM to 4 PM</b></span>
-    <a href="tel:4037649133">Call <b>(403) 764-9133</b></a>
+<nav class="nav" id="nav">
+  <a href="https://pcsclean.ca/" class="logo-chip"><img src="images/pcs-logo.jpg" alt="PCS Cleaning &amp; Property Services Ltd. logo"></a>
+  <ul id="menu">
+    <li><a href="https://pcsclean.ca/" class="on">Home</a></li>
+    <li><a href="https://pcsclean.ca/our-company/">Our Company</a></li>
+    <li><a href="https://pcsclean.ca/our-services/">Our Services</a></li>
+    <li><a href="https://pcsclean.ca/our-clients/">Our Clients</a></li>
+    <li><a href="https://pcsclean.ca/contact-us/">Contact Us</a></li>
+  </ul>
+  <div class="nav-r">
+    <a href="tel:4037649133" class="tel">(403) 764-9133</a>
+    <a href="https://pcsclean.ca/request-a-quote/" class="pill pill-lime">Request A Quote</a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')"><i></i><i></i><i></i></button>
   </div>
-</div>
+</nav>
 
-<header>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg" role="img" aria-label="PCS crew cleaning commercial building glass"></div>
   <div class="wrap">
-    <a href="https://pcsclean.ca/" class="brand">
-      <img src="images/pcs-logo.jpg" alt="PCS Cleaning &amp; Property Services Ltd. logo">
-      <span>PCS Cleaning &amp; Property Services Ltd.</span>
-    </a>
-    <nav>
-      <button class="burger" aria-label="Menu" onclick="document.querySelector('nav ul').classList.toggle('open')"><i></i><i></i><i></i></button>
-      <ul>
-        <li><a href="https://pcsclean.ca/" class="on">Home</a></li>
-        <li><a href="https://pcsclean.ca/our-company/">Our Company</a></li>
-        <li><a href="https://pcsclean.ca/our-services/">Our Services</a></li>
-        <li><a href="https://pcsclean.ca/our-clients/">Our Clients</a></li>
-        <li><a href="https://pcsclean.ca/contact-us/">Contact Us</a></li>
-        <li><a href="https://pcsclean.ca/request-a-quote/" class="qbtn">Request A Quote</a></li>
-      </ul>
-    </nav>
+    <span class="eyebrow"><i></i>PCS Cleaning &amp; Property Services Ltd.</span>
+    <div class="hero-top">
+      <h1 class="u">Commercial <span class="hl">janitorial</span> <span class="ol">&amp;</span> property services.</h1>
+      <div class="hero-side">
+        <p>Full service commercial janitorial, plus landscaping, snow removal and building maintenance. Monday to Friday, 8 AM to 4 PM.</p>
+        <div class="btns">
+          <a href="https://pcsclean.ca/request-a-quote/" class="pill pill-lime">Request A Quote <span class="dot">↗</span></a>
+          <a href="tel:4037649133" class="pill pill-ghost">(403) 764-9133</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-chips">
+      <div class="chip"><b>2009</b><span>PCS Cleaning Services founded</span></div>
+      <div class="chip"><b>2016</b><span>PCS Property Services founded</span></div>
+      <div class="chip"><div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg></div><span>Office buildings, hotels, restaurants, theatres and property managers</span></div>
+    </div>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="wrap">
-    <div class="hero-copy">
-      <span class="tag cond">PCS Cleaning &amp; Property Services Ltd.</span>
-      <h1 class="disp">Commercial janitorial <em>and property services.</em></h1>
-      <p class="lead">Full service commercial janitorial through PCS Cleaning Services, plus landscaping, snow removal and building maintenance through PCS Property Services.</p>
-      <div class="hero-cta">
-        <a href="https://pcsclean.ca/request-a-quote/" class="btn btn-g">Request A Quote <span>→</span></a>
-        <a href="tel:4037649133" class="btn btn-line">(403) 764-9133</a>
-      </div>
-      <div class="hero-meta">
-        <div><strong>2009</strong>PCS Cleaning Services founded</div>
-        <div><strong>2016</strong>PCS Property Services founded</div>
-      </div>
-    </div>
-    <div class="skyline" aria-label="PCS crew cleaning commercial building glass">
-      <div class="bar" style="--i:0;--t:34%"></div>
-      <div class="bar" style="--i:1;--t:18%"></div>
-      <div class="bar" style="--i:2;--t:8%"></div>
-      <div class="bar" style="--i:3;--t:0%"></div>
-      <div class="bar" style="--i:4;--t:4%"></div>
-      <div class="bar" style="--i:5;--t:14%"></div>
-      <div class="bar" style="--i:6;--t:26%"></div>
-      <div class="bar" style="--i:7;--t:40%"></div>
-      <div class="bar" style="--i:8;--t:52%"></div>
-      <div class="sky-label"><b>Commercial Janitorial</b>Full service, for buildings big and small.</div>
-    </div>
-  </div>
-</section>
+<div style="overflow:hidden;padding:2.5rem 0 .5rem"><div class="ticker" aria-hidden="true"><div class="t">
+  <span>Commercial Janitorial</span><span>Landscaping</span><span>Snow Removal</span><span>Building Maintenance</span><span>Commercial Janitorial</span><span>Landscaping</span><span>Snow Removal</span><span>Building Maintenance</span>
+  <span>Commercial Janitorial</span><span>Landscaping</span><span>Snow Removal</span><span>Building Maintenance</span><span>Commercial Janitorial</span><span>Landscaping</span><span>Snow Removal</span><span>Building Maintenance</span>
+</div></div></div>
 
-<!-- NAME STORY -->
-<section class="name" id="company">
+<!-- BENTO: TWO COMPANIES -->
+<section class="bento-sec" id="services">
   <div class="wrap">
-    <span class="cond kicker">Where the name comes from</span>
-    <div class="word-row rv">
-      <div class="word"><span>P</span>rovable</div>
-      <div class="word"><span>C</span>leaning</div>
-      <div class="word"><span>S</span>ervices</div>
+    <div class="head rv">
+      <div><span class="eyebrow"><i></i>Our Services</span><h2 class="u">Two companies. <span>One call.</span></h2></div>
+      <p>PCS Cleaning Services and PCS Property Services, working side by side under PCS Cleaning &amp; Property Services Ltd.</p>
     </div>
-    <div class="name-grid rv">
-      <p class="big">PCS was founded in 2009 as Provable Cleaning Services Ltd. Our clients often shortened it to <mark>PCS</mark>, so we have been operating as PCS Cleaning Services for over 10 years now.</p>
-      <p>We offer full service commercial janitorial services. In 2016 we founded PCS Property Services Ltd. to add landscaping, snow removal and building maintenance, so one team can look after your property inside and out.<br><br><a href="https://pcsclean.ca/our-company/" style="color:var(--lime);font-weight:600">More about our company →</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- TWO DIVISIONS -->
-<section class="divs" id="services">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <h2 class="disp">Two companies. One call.</h2>
-      <p>PCS Cleaning Services and PCS Property Services work side by side under PCS Cleaning &amp; Property Services Ltd.</p>
-    </div>
-    <div class="diptych rv">
-      <article class="div-card dc-clean">
-        <div class="yr">2009</div>
-        <h3>PCS Cleaning Services</h3>
-        <p>Full service commercial janitorial services. Founded in 2009 as Provable Cleaning Services Ltd. and operating as PCS Cleaning Services for over 10 years.</p>
-        <div class="div-img"><img src="images/janitorial.jpg" alt="Commercial janitorial cleaning in an office" onerror="this.style.display='none'"></div>
-        <a href="https://pcsclean.ca/our-company/" class="go">View More</a>
-      </article>
-      <article class="div-card dc-prop">
-        <div class="yr">2016</div>
-        <h3>PCS Property Services</h3>
-        <p>PCS Property Services Ltd. was founded in 2016. We offer landscaping, snow removal and building maintenance services.</p>
-        <div class="prop-trio">
-          <figure><img src="images/landscaping.jpg" alt="Commercial landscaping" onerror="this.style.display='none'"><figcaption>Landscaping</figcaption></figure>
-          <figure><img src="images/snow-removal.jpg" alt="Snow removal at a commercial property" onerror="this.style.display='none'"><figcaption>Snow Removal</figcaption></figure>
-          <figure><img src="images/building-maintenance.jpg" alt="Building maintenance" onerror="this.style.display='none'"><figcaption>Building Maintenance</figcaption></figure>
+    <div class="bento">
+      <a href="https://pcsclean.ca/our-company/" class="tile t-clean rv">
+        <div class="img"><img src="images/janitorial.jpg" alt="Commercial janitorial cleaning" onerror="this.remove()"></div>
+        <div class="shade"></div>
+        <div class="in">
+          <span class="badge">PCS CLEANING SERVICES</span>
+          <div>
+            <div class="yr">2009</div>
+            <div class="row-end">
+              <div><h3 class="u">Commercial Janitorial</h3><p>We offer full service commercial janitorial services. Operating as PCS Cleaning Services for over 10 years now.</p></div>
+              <span class="arrow">→</span>
+            </div>
+          </div>
         </div>
-        <a href="https://pcsclean.ca/our-services/" class="go">View Services</a>
-      </article>
+      </a>
+      <a href="https://pcsclean.ca/our-services/" class="tile t-prop rv">
+        <div class="in">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem"><span class="badge">PCS PROPERTY SERVICES</span><span class="arrow">→</span></div>
+          <div><div class="yr">2016</div><h3 class="u" style="margin-top:.8rem">PCS Property Services Ltd.</h3><p>Landscaping, snow removal and building maintenance services.</p></div>
+        </div>
+      </a>
+      <div class="tile t-small rv">
+        <div class="mini"><img src="images/landscaping.jpg" alt="Landscaping" onerror="this.remove()"><span>Landscaping</span></div>
+        <div class="mini"><img src="images/snow-removal.jpg" alt="Snow removal" onerror="this.remove()"><span>Snow Removal</span></div>
+        <div class="mini"><img src="images/building-maintenance.jpg" alt="Building maintenance" onerror="this.remove()"><span>Building Maintenance</span></div>
+      </div>
+      <div class="tile t-story rv" id="company">
+        <div class="in">
+          <div class="acr"><div><b>P</b>rovable</div><div><b>C</b>leaning</div><div><b>S</b>ervices</div></div>
+          <p>PCS was founded in 2009 as <strong>Provable Cleaning Services Ltd.</strong> However our clients often shortened it to PCS, so we have been operating as <strong>PCS Cleaning Services</strong> for over 10 years now!</p>
+        </div>
+      </div>
+      <a href="tel:4037649133" class="tile t-call rv">
+        <div class="in">
+          <div style="display:flex;justify-content:space-between"><small>Call us</small><span class="arrow">↗</span></div>
+          <div><div class="big">(403) 764-9133</div><small style="display:block;margin-top:.5rem">Monday to Friday · 8 AM to 4 PM</small></div>
+        </div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- WHO WE SERVE -->
-<section class="serve">
-  <div class="wrap serve-grid">
-    <div class="serve-left rv">
-      <span class="tag cond">Our Clients</span>
-      <h2 class="disp" style="margin-top:1rem">Companies big and small.</h2>
-      <p>PCS is very proud to have established relationships with many great companies, across many industries.</p>
-      <div class="serve-preview">
-        <img src="images/office-building.jpg" data-k="0" alt="" class="show" onerror="this.remove()">
-        <img src="images/hotel.jpg" data-k="1" alt="" onerror="this.remove()">
-        <img src="images/property.jpg" data-k="2" alt="" onerror="this.remove()">
-        <img src="images/restaurant.jpg" data-k="3" alt="" onerror="this.remove()">
-        <img src="images/theatre.jpg" data-k="4" alt="" onerror="this.remove()">
-      </div>
+<!-- INDUSTRIES RAIL -->
+<section class="rail-sec">
+  <div class="wrap head rv">
+    <div><span class="eyebrow" style="color:var(--night)"><i></i>Who we work with</span><h2 class="u">Companies <span>big and small.</span></h2></div>
+    <div style="display:flex;flex-direction:column;gap:1.2rem;align-items:flex-start">
+      <p>PCS is very proud to have established relationships with many great companies both big and small.</p>
+      <div class="rail-ctrl"><button aria-label="Previous" onclick="slideRail(-1)">←</button><button aria-label="Next" onclick="slideRail(1)">→</button></div>
     </div>
-    <div class="rv">
-      <ul class="index">
-        <li class="act" data-k="0"><a href="https://pcsclean.ca/our-clients/"><span class="n">01</span><span class="t">Office Buildings</span><span class="ar">→</span></a></li>
-        <li data-k="1"><a href="https://pcsclean.ca/our-clients/"><span class="n">02</span><span class="t">Hotels</span><span class="ar">→</span></a></li>
-        <li data-k="2"><a href="https://pcsclean.ca/our-clients/"><span class="n">03</span><span class="t">Property Managers</span><span class="ar">→</span></a></li>
-        <li data-k="3"><a href="https://pcsclean.ca/our-clients/"><span class="n">04</span><span class="t">Restaurants</span><span class="ar">→</span></a></li>
-        <li data-k="4"><a href="https://pcsclean.ca/our-clients/"><span class="n">05</span><span class="t">Theatres</span><span class="ar">→</span></a></li>
-      </ul>
-      <p class="index-more">And other clients in many industries.</p>
-    </div>
+  </div>
+  <div class="rail" id="rail">
+    <div class="ind"><img src="images/office-building.jpg" alt="Office building" onerror="this.remove()"><span class="num">01</span><h3>Office Buildings</h3></div>
+    <div class="ind"><img src="images/hotel.jpg" alt="Hotel lobby" onerror="this.remove()"><span class="num">02</span><h3>Hotels</h3></div>
+    <div class="ind"><img src="images/property.jpg" alt="Commercial property" onerror="this.remove()"><span class="num">03</span><h3>Property Managers</h3></div>
+    <div class="ind"><img src="images/restaurant.jpg" alt="Restaurant" onerror="this.remove()"><span class="num">04</span><h3>Restaurants</h3></div>
+    <div class="ind"><img src="images/theatre.jpg" alt="Theatre" onerror="this.remove()"><span class="num">05</span><h3>Theatres</h3></div>
+    <a href="https://pcsclean.ca/our-clients/" class="ind more"><h3>And many other industries →</h3></a>
   </div>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="words">
+<section class="voices">
   <div class="wrap">
-    <span class="tag cond">What our clients say</span>
-    <h2 class="disp" style="margin-top:1rem">Reliable. Professional.</h2>
-    <div class="quotes">
-      <div class="q q1 rv"><blockquote>PCS is a one stop shop and they are committed to giving excellent service no matter the job.</blockquote><cite><b>Niki</b>, York Realty</cite></div>
-      <div class="q q2 rv"><blockquote>Reliable and Professional only begin to describe the PCS team.</blockquote><cite><b>Daniel</b>, The Marriott Hotel</cite></div>
-      <div class="q q3 rv"><blockquote>PCS ensures our hotel is always ready to impress our guests.</blockquote><cite><b>Robert</b>, Hotel Le Germain</cite></div>
-      <div class="q q4 rv"><blockquote>PCS really cares about our business. Our last minute requests are never an issue.</blockquote><cite><b>Syreeta</b>, Jubilations Dinner Theatre</cite></div>
+    <div class="v-card rv">
+      <div class="slides" id="slides">
+        <div class="slide on"><q>Reliable and Professional only begin to describe the PCS team.</q><div class="who"><span class="av">D</span><div><b>Daniel</b><br>The Marriott Hotel</div></div></div>
+        <div class="slide"><q>PCS ensures our hotel is always ready to impress our guests.</q><div class="who"><span class="av">R</span><div><b>Robert</b><br>Hotel Le Germain</div></div></div>
+        <div class="slide"><q>PCS really cares about our business. Our last minute requests are never an issue.</q><div class="who"><span class="av">S</span><div><b>Syreeta</b><br>Jubilations Dinner Theatre</div></div></div>
+        <div class="slide"><q>PCS is a one stop shop and they are committed to giving excellent service no matter the job.</q><div class="who"><span class="av">N</span><div><b>Niki</b><br>York Realty</div></div></div>
+      </div>
+      <div class="v-side">
+        <div class="qmark">“</div>
+        <div class="dots" id="dots">
+          <button class="on">The Marriott Hotel</button>
+          <button>Hotel Le Germain</button>
+          <button>Jubilations Dinner Theatre</button>
+          <button>York Realty</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- CLIENT ROSTER -->
-<section class="roster">
-  <div class="wrap head rv">
-    <h2 class="disp">Trusted by names you know.</h2>
-    <p>Office buildings, hotels, property managers, restaurants, theatres and shopping centres.</p>
+<!-- CLIENT WALL -->
+<section class="wall-sec">
+  <div class="wrap">
+    <div class="head rv">
+      <div><span class="eyebrow"><i></i>Our Clients</span><h2 class="u">Trusted by <span>names you know.</span></h2></div>
+      <p>Office buildings, hotels, property managers, restaurants, theatres and more.</p>
+    </div>
+    <div class="wall" id="wall">
+      <span class="hot">Microsoft</span><span>York Realty</span><span>Barclay</span><span class="hot">The Marriott Hotel</span><span>Cintas</span><span>Hotel Le Germain</span><span>National Westhills</span><span>Notables Restaurant</span><span class="hot">SportChek</span><span>Desjardin Securities</span><span>Charcut Restaurant</span><span>Aecon Group</span><span>Sage Hill Crossing</span><span>Aussie Rules Piano Bar</span><span>Anejo Restaurant</span><span>Nexus Building</span><span>The Nash &amp; OffCut Bar</span><span>Jubilations Dinner Theatre</span><span class="hot">JW Marriott ICE District</span><span>Blanco Cantina</span><span>RioCan Property Services</span><span>Northgate Shopping Centre</span><span>Brentwood Village Mall</span><span class="hot">The Hyatt Hotel</span><span>South Trail Shopping Centre</span><span>Corus Entertainment</span><span>East Hills Shopping Centre</span>
+    </div>
   </div>
-  <div class="marq"><div class="track">
-    <span>York Realty</span><span>Microsoft</span><span>Barclay</span><span>Cintas</span><span>Hotel Le Germain</span><span>National Westhills</span><span>Notables Restaurant</span><span>SportChek</span><span>The Marriott Hotel</span><span>Desjardin Securities</span><span>Charcut Restaurant</span><span>Aecon Group</span><span>Sage Hill Crossing</span>
-  </div></div>
-  <div class="marq rev"><div class="track">
-    <span>Aussie Rules Piano Bar</span><span>Anejo Restaurant</span><span>Nexus Building</span><span>The Nash &amp; OffCut Bar</span><span>Jubilations Dinner Theatre</span><span>JW Marriott ICE District</span><span>Blanco Cantina</span><span>RioCan Property Services</span><span>Northgate Shopping Centre</span><span>Brentwood Village Mall</span><span>The Hyatt Hotel</span><span>South Trail Shopping Centre</span><span>Corus Entertainment</span><span>East Hills Shopping Centre</span>
-  </div></div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
   <div class="wrap">
     <div class="cta-box rv">
-      <div class="cta-l">
-        <h2 class="disp">Request A Quote.</h2>
-        <p>Janitorial, landscaping, snow removal or building maintenance. Tell us about your property and we will get back to you.</p>
-        <a href="https://pcsclean.ca/request-a-quote/" class="btn btn-w">Request A Quote <span>→</span></a>
+      <div>
+        <h2 class="u">Request A Quote.</h2>
+        <p>Janitorial, landscaping, snow removal or building maintenance. Tell us about your property.</p>
+        <div class="cta-meta">
+          <div><small>Call</small><a href="tel:4037649133">(403) 764-9133</a></div>
+          <div><small>Hours</small><div>Mon to Fri, 8 AM to 4 PM</div></div>
+        </div>
       </div>
-      <div class="cta-bars" aria-hidden="true"><i style="height:60px"></i><i style="height:110px"></i><i style="height:160px"></i><i style="height:200px"></i><i style="height:150px"></i><i style="height:95px"></i></div>
-      <div class="cta-r">
-        <div><div class="cond lbl">Call us</div><a href="tel:4037649133" class="val">(403) 764-9133</a></div>
-        <div><div class="cond lbl">Office hours</div><div class="val">Mon to Fri<br>8 AM to 4 PM</div></div>
-      </div>
+      <a href="https://pcsclean.ca/request-a-quote/" class="spin" aria-label="Request A Quote">
+        <svg viewBox="0 0 200 200"><defs><path id="c" d="M100,100 m-82,0 a82,82 0 1,1 164,0 a82,82 0 1,1 -164,0"/></defs><text font-family="Unbounded" font-weight="600" font-size="15.5" letter-spacing="3.4" fill="#05072b"><textPath href="#c">REQUEST A QUOTE · REQUEST A QUOTE · </textPath></text></svg>
+        <span class="core">↗</span>
+      </a>
     </div>
   </div>
 </section>
@@ -419,7 +411,7 @@ footer{background:var(--ink);color:#c6cdf5;padding:4.5rem 0 1.6rem;font-size:.93
     <div class="f-grid">
       <div>
         <a href="https://pcsclean.ca/" class="f-logo"><img src="images/pcs-logo.jpg" alt="PCS logo"></a>
-        <p class="f-about">PCS Cleaning &amp; Property Services Ltd. Commercial janitorial, landscaping, snow removal and building maintenance.</p>
+        <p>PCS Cleaning &amp; Property Services Ltd. Commercial janitorial, landscaping, snow removal and building maintenance.</p>
       </div>
       <div>
         <h4>Navigation</h4>
@@ -434,32 +426,39 @@ footer{background:var(--ink);color:#c6cdf5;padding:4.5rem 0 1.6rem;font-size:.93
       </div>
       <div>
         <h4>Get in touch</h4>
-        <a href="tel:4037649133" class="f-big">(403) 764-9133</a>
-        <p>Monday to Friday<br>8 AM to 4 PM</p>
+        <ul>
+          <li><a href="tel:4037649133" class="f-tel">(403) 764-9133</a></li>
+          <li style="color:#a9b0e0">Monday to Friday<br>8 AM to 4 PM</li>
+        </ul>
       </div>
     </div>
+    <div class="f-word">PCS Clean</div>
     <div class="f-bot">
       <span>© Copyright 2020 PCS Cleaning &amp; Property Services Ltd. All Rights Reserved.</span>
-      <span><a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Design by Cleaning Digital.</a></span>
-      <a href="#" class="top">Go to Top ↑</a>
+      <a href="https://cleanningdigital.com/" target="_blank" rel="noopener">Design by Cleaning Digital.</a>
+      <a href="#">Go to Top ↑</a>
     </div>
   </div>
 </footer>
 
 <script>
-// reveal on scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-// industries index preview
-const items=[...document.querySelectorAll('.index li')];
-function pick(k){
-  items.forEach(li=>li.classList.toggle('act',li.dataset.k==k));
-  const imgs=[...document.querySelectorAll('.serve-preview img')];
-  imgs.forEach(im=>im.classList.toggle('show',im.dataset.k==k));
-}
-items.forEach(li=>li.addEventListener('mouseenter',()=>pick(li.dataset.k)));
-// duplicate marquee tracks for seamless loop
-document.querySelectorAll('.marq').forEach(m=>{const t=m.querySelector('.track');m.appendChild(t.cloneNode(true)).setAttribute('aria-hidden','true')});
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>nav.classList.toggle('solid',scrollY>80),{passive:true});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv,#wall').forEach(el=>io.observe(el));
+document.querySelectorAll('#wall span').forEach((s,i)=>s.style.transitionDelay=(i*30)+'ms');
+// rail
+const rail=document.getElementById('rail');
+function slideRail(d){rail.scrollBy({left:d*rail.querySelector('.ind').offsetWidth*1.05,behavior:'smooth'})}
+let down=false,sx,sl;
+rail.addEventListener('mousedown',e=>{down=true;sx=e.pageX;sl=rail.scrollLeft});
+addEventListener('mouseup',()=>down=false);
+rail.addEventListener('mousemove',e=>{if(down){e.preventDefault();rail.scrollLeft=sl-(e.pageX-sx)}});
+// testimonials
+const slides=[...document.querySelectorAll('.slide')],dots=[...document.querySelectorAll('#dots button')];let cur=0,timer;
+function show(i){cur=i;slides.forEach((s,k)=>s.classList.toggle('on',k===i));dots.forEach((d,k)=>d.classList.toggle('on',k===i))}
+function auto(){clearInterval(timer);timer=setInterval(()=>show((cur+1)%slides.length),5500)}
+dots.forEach((d,i)=>d.addEventListener('click',()=>{show(i);auto()}));auto();
 </script>
 </body>
 </html>
